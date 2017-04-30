@@ -5,19 +5,17 @@
 <script src="js/ngppt.js"></script>
 <body ng-app="app">
 
-<div ng-controller="ngCtrl">
- 
-<p>Input something in the input box:</p>
-<p>Name: <input type="text" ng-model="myname"></p>
-<p ng-bind="name"></p>
-<ng-power-point timer="5ooms">
-	<div ppt-index="0">DIV - 1</div>
-	<div ppt-index="1">DIV - 2</div>
-	<div ppt-index="2">DIV - 3</div>
+	<div ng-controller="ngCtrl">
+	
+		<p>Input something in the input box:</p>
+		
+		<ng-power-point timer="5ooms">
+			<div ppt-index="0">DIV - 1</div>
+			<div ppt-index="1">DIV - 2</div>
+			<div ppt-index="2">DIV - 3</div>
+		</ng-power-point>
 
-</ng-power-point>
-
-</div>
+	</div>
 
 </body>
 </html>
