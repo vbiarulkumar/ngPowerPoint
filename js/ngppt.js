@@ -1,22 +1,11 @@
-/**
- * Instantiate the module
- */
-/*(function() {
+// <ng-power-point timer="500">
+// 	<div ppt-index="0">DIV - 1</div>
+// 	<div ppt-index="1">DIV - 2</div>
+// 	<div ppt-index="2">DIV - 3</div>
+// </ng-power-point>
 
-	angular.module('ngPowerPoint', []);
-})();
+// get timer attr value from parent directive and pass it to the child 
+// directive.
 
-(function() {
-
-	angular.module('ngPowerPoint').directive('ngPowerPoint', directive);
-
-	directive.$inject = [];
-	return directive;
-
-	function directive() {
-		return {
-			template: '<textarea rows="4" cols="50"></textarea>',
-			restrict: 'E'
-		}
-	}
-});*/
+// run each ppt-index in ng-repeat which shows the value in 
+// index order.

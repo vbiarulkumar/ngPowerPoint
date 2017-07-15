@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngPowerPoint']);
+var app = angular.module('pptApp', ['ngPowerPoint']);
 
 var ngPowerPoint = angular.module('ngPowerPoint', []);
 ngPowerPoint.directive('ngPowerPoint', function() {
@@ -6,21 +6,27 @@ ngPowerPoint.directive('ngPowerPoint', function() {
 	return {
 		templateUrl: '../js/textarea.html',
 		restrict: 'E',
-		scope: {},
+		scope: {
+			timer: '='
+		},
 		transclude: true,
 		controller: ['$scope', function($scope) {
-
+			/*Used for accessing parent directive properties
+			from child directive*/
+			this.getTimer = function() {
+				return $scope.timer;
+		    }
 		}]
 	}
 });
 ngPowerPoint.directive('pptIndex', function() {
 	function link(scope, element, attrs, timerctrl) {
-		console.log(scope.pptIndex);	
+		scope.timer = timerctrl.getTimer();
+		// console.log(scope.timer);
 	}
 	return {
-		require: '^^ngPowerPoint',
+		require: '^ngPowerPoint',
 		restrict: 'A',
-		transclude: true,
 		scope: {
 			pptIndex: '@'
 		},
@@ -29,6 +35,6 @@ ngPowerPoint.directive('pptIndex', function() {
 });
 
 app.controller('ngCtrl', ['$scope', function($scope) {
-
+	
 }]);
 
